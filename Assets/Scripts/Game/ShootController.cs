@@ -8,19 +8,26 @@ namespace Game
     public class ShootController : MonoBehaviour
     {
         [SerializeField] private Transform bulletSpawnPoint;
-        private GameObject bullet;
+        private GameObject bulletGameObject;
+        private Bullet bullet;
 
-        private void Update()
+        public void SpawnBullet()
         {
-            if(Input.GetMouseButtonDown(0))
-            {
-                bullet = ObjectPooler.SpawnFromPool(PoolTag.Bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<StraightMovement>().Reset();
-            }
-            else if(Input.GetMouseButtonUp(0))
-            {
-                bullet.GetComponent<Bullet>().Release();
-            }
+            bulletGameObject = ObjectPooler.SpawnFromPool(PoolTag.Bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet = bulletGameObject.GetComponent<Bullet>();
+            bullet.Reset();
+        }
+
+        public void ReleaseBullet()
+        {
+            if(bullet != null)
+                bullet.Release();
+        }
+
+        public void IncreaseBullet()
+        {
+            if(bullet != null)
+                bullet.Increase();
         }
     }
 }
