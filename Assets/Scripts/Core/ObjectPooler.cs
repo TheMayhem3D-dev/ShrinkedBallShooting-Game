@@ -48,8 +48,10 @@ namespace Core
             }
         }
 
-        public static GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+        public static GameObject SpawnFromPool(PoolTag poolTag, Vector3 position, Quaternion rotation)
         {
+            string tag = poolTag.ToString();
+
             if (!poolDictionary.ContainsKey(tag))
             {
                 throw new Exception("Pool with tag " + tag + " doesn't exist.");
