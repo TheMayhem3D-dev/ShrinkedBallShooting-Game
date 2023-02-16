@@ -8,7 +8,7 @@ namespace Core
     public enum PoolTag
     {
         Bullet,
-        DestroyFX
+        Explosion
     }
 
     public class ObjectPooler : MonoBehaviour

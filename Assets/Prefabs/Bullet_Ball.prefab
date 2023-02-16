@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 565095742336407011}
   - component: {fileID: -5922931630090945575}
   - component: {fileID: 6689701216762386206}
+  - component: {fileID: 5873376273388417881}
+  - component: {fileID: 490306318492483897}
   m_Layer: 0
   m_Name: Bullet_Ball
   m_TagString: Untagged
@@ -48,9 +50,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &565095742336407011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236cdf9a5e488e2449192c8b9535145a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 10
 --- !u!114 &-5922931630090945575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +93,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleSpeed: 1
   scaleFactor: 0.5
+--- !u!114 &5873376273388417881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144956730407818573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cb6de5737c60043a3ca33f873cdc61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &490306318492483897
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144956730407818573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &144956730673400726
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +129,6 @@ GameObject:
   - component: {fileID: 144956730673400725}
   - component: {fileID: 144956730673400722}
   - component: {fileID: 144956730673400723}
-  - component: {fileID: 144956730673400724}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -172,19 +199,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &144956730673400724
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144956730673400726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &144956730803610826
 GameObject:
   m_ObjectHideFlags: 0

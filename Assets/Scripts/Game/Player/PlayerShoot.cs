@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core;
 
-namespace Game
+namespace Game.Player
 {
-    public class ShootController : MonoBehaviour
+    public class PlayerShoot : PoolSpawner
     {
-        [SerializeField] private Transform bulletSpawnPoint;
-        private GameObject bulletGameObject;
         private Bullet bullet;
 
-        public void SpawnBullet()
+        public override void Spawn()
         {
-            bulletGameObject = ObjectPooler.SpawnFromPool(PoolTag.Bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet = bulletGameObject.GetComponent<Bullet>();
+            base.Spawn();
+            bullet = spawnedGameObject.GetComponent<Bullet>();
             bullet.Reset();
         }
 

@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Game
+namespace Game.Player
 {
-    [RequireComponent(typeof(ShootController))]
+    [RequireComponent(typeof(PlayerShoot))]
     [RequireComponent(typeof(PlayerBall))]
     public class UserInput : MonoBehaviour
     {
-        private ShootController shootController;
+        private PlayerShoot shootController;
         private PlayerBall playerBall;
 
         private void Awake()
         {
-            shootController = GetComponent<ShootController>();
+            shootController = GetComponent<PlayerShoot>();
             playerBall = GetComponent<PlayerBall>();
         }
 
@@ -20,9 +20,9 @@ namespace Game
         {
             if (Input.GetMouseButtonDown(0))
             {
-                shootController.SpawnBullet();
+                shootController.Spawn();
             }
-            else if(Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(0))
             {
                 shootController.IncreaseBullet();
                 playerBall.DecreaseBall();

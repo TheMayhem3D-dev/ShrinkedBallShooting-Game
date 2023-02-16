@@ -14,6 +14,7 @@ namespace Game
 
         public void Reset()
         {
+            rb.velocity = Vector3.zero;
             transform.rotation = Quaternion.identity;
         }
     }
