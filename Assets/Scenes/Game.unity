@@ -174,7 +174,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: -5
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -389,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 765941483815265215, guid: 25b32aabd0146a54e8947584ad6c9c2b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 765941483815265215, guid: 25b32aabd0146a54e8947584ad6c9c2b,
         type: 3}
@@ -430,6 +430,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619067348797150841, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619067348797150841, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: fallSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619067348797150841, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25b32aabd0146a54e8947584ad6c9c2b, type: 3}
