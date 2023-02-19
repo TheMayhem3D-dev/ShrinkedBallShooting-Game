@@ -11,6 +11,10 @@ namespace Game
         private Disabler disabler;
         private Explosion explosion;
 
+        [SerializeField] private float pauseBeforeDisable = 1f;
+        [SerializeField] private Material corruptMaterial;
+        [SerializeField] private MeshRenderer obstacleMeshRenderer;
+
         private void Awake()
         {
             SetComponents();
@@ -25,11 +29,20 @@ namespace Game
         public void OnBulletHit(float radius)
         {
             explosion.Explode(transform.position, radius);
-            disabler.Disable();
+            StartCoroutine(Disable());
         }
 
         public void OnExplosionHit()
         {
+            StartCoroutine(Disable());
+        }
+
+        private IEnumerator Disable()
+        {
+            obstacleMeshRenderer.material = corruptMaterial;
+
+            yield return new WaitForSeconds(pauseBeforeDisable);
+
             disabler.Disable();
         }
     }

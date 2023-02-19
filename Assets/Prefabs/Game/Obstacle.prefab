@@ -216,6 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45ff0df64324df4fa0654b55539e9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseBeforeDisable: 0.5
+  corruptMaterial: {fileID: 2100000, guid: f03c6d2632326b74da73a861c46521ad, type: 2}
+  obstacleMeshRenderer: {fileID: 969202785922412367}
 --- !u!114 &2464267276913589549
 MonoBehaviour:
   m_ObjectHideFlags: 0
