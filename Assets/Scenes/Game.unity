@@ -458,6 +458,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 765941483815265215, guid: 25b32aabd0146a54e8947584ad6c9c2b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 765941483815265215, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 765941483815265215, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 765941483815265215, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -508,11 +523,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776730870709887602, guid: 25b32aabd0146a54e8947584ad6c9c2b,
         type: 3}
-      propertyPath: raycastStep
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776730870709887602, guid: 25b32aabd0146a54e8947584ad6c9c2b,
-        type: 3}
       propertyPath: maxRaycastPosX
       value: 1
       objectReference: {fileID: 0}
@@ -520,6 +530,21 @@ PrefabInstance:
         type: 3}
       propertyPath: minRaycastPosX
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457214992971597344, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457214992971597344, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372569471713779529, guid: 25b32aabd0146a54e8947584ad6c9c2b,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7619067348797150841, guid: 25b32aabd0146a54e8947584ad6c9c2b,
         type: 3}

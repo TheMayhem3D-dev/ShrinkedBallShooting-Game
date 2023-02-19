@@ -9,7 +9,7 @@ namespace Game
     {
         protected Rigidbody rb;
         protected bool canMove;
-        [SerializeField] protected float movementSpeed = 15f;
+        [SerializeField] protected float movementSpeed;
 
         protected virtual void Awake()
         {
@@ -25,6 +25,11 @@ namespace Game
         public void SetMoveAvailability(bool value)
         {
             canMove = value;
+        }
+
+        public void SetSpeed(float value)
+        {
+            movementSpeed = value;
         }
 
         protected abstract void Move();

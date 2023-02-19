@@ -6,24 +6,33 @@ using Core;
 namespace Game.Player
 {
     [RequireComponent(typeof(Scaler))]
+    [RequireComponent(typeof(StraightMovement))]
     public class PlayerBall : MonoBehaviour
     {
         private Scaler scaler;
+        private StraightMovement straightMovement;
 
         private Vector3[] raycastOffset;
 
         [Header("Ball Properties")]
         [SerializeField] private float minimumBallSize = 0.1f;
+        private const float ballSpeedFactor = 2f;
 
         [Header("Raycast Properties")]
         [SerializeField] private float raycastStep = 0.25f;
         private float minRaycastPosX;
         private float maxRaycastPosX;
 
-        private void Awake()
+        void Awake()
+        {
+            UpdateRaycasts();
+            SetComponents();
+        }
+
+        private void SetComponents()
         {
             scaler = GetComponent<Scaler>();
-            UpdateRaycasts();
+            straightMovement = GetComponent<StraightMovement>();
         }
 
         private void UpdateRaycasts()
@@ -118,7 +127,8 @@ namespace Game.Player
 
         private void ReleaseBall()
         {
-
+            straightMovement.SetSpeed(transform.localScale.x * ballSpeedFactor);
+            straightMovement.SetMoveAvailability(true);
         }
     }
 }

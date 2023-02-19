@@ -76,7 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minJumpHeightPoint: {fileID: 4427216250844602224}
   maxJumpHeightPoint: {fileID: 7455681486189503246}
-  speed: 1
+  jumpSpeed: 1
+  fallSpeed: 2
 --- !u!1 &765941483552308581
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +174,7 @@ GameObject:
   - component: {fileID: 910056478186187824}
   - component: {fileID: 3337862269902564934}
   - component: {fileID: 4457214992971597344}
+  - component: {fileID: 7372569471713779529}
   m_Layer: 0
   m_Name: Player_Ball
   m_TagString: Untagged
@@ -237,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e183f3356042eda47ab74e790c0067c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimumBallSize: 0.1
+  raycastStep: 0.2
 --- !u!114 &910056478186187824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +284,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7372569471713779529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765941483815265214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f403789b1f8b2479a4a599514462d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
 --- !u!1 &911868474621618665
 GameObject:
   m_ObjectHideFlags: 0
