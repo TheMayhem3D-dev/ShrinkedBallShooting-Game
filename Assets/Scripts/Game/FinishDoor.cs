@@ -61,7 +61,6 @@ namespace Game
         {
             isDoorDistCheckActivated = false;
             doorOpening = true;
-            GameEvents.instance?.NotifyOnGameVictory();
         }
 
         private void ProcessOpenDoor()
