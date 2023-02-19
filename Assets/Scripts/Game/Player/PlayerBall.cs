@@ -96,6 +96,12 @@ namespace Game.Player
             return transform.localScale.x > minimumBallSize;
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.CompareTag("Finish"))
+                GameEvents.instance?.NotifyOnGameVictory();
+        }
+
         void FixedUpdate()
         {
             CheckRoad();
@@ -132,7 +138,7 @@ namespace Game.Player
 
         private void ReleaseBall()
         {
-            straightMovement.SetSpeed(transform.localScale.x * ballSpeedFactor);
+            straightMovement.SetSpeed(ballSpeedFactor / transform.localScale.x);
             straightMovement.SetMoveAvailability(true);
         }
     }

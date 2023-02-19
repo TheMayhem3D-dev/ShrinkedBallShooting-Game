@@ -32,6 +32,11 @@ namespace Game
             movementSpeed = value;
         }
 
+        public float GetSpeed()
+        {
+            return movementSpeed;
+        }
+
         protected abstract void Move();
     }
 }
