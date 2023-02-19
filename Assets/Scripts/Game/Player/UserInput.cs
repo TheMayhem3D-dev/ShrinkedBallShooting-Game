@@ -19,20 +19,22 @@ namespace Game.Player
             SetComponents();
         }
 
-        protected override void Subscribe()
+        public override void Subscribe()
         {
             if (GameEvents.instance)
             {
                 GameEvents.instance.onGameOver += OnSessionOver;
+                GameEvents.instance.onClearRoad += OnSessionOver;
                 GameEvents.instance.onGameVictory += OnSessionOver;
             }
         }
 
-        protected override void Unsubcscribe()
+        public override void Unsubscribe()
         {
             if (GameEvents.instance)
             {
                 GameEvents.instance.onGameOver -= OnSessionOver;
+                GameEvents.instance.onClearRoad -= OnSessionOver;
                 GameEvents.instance.onGameVictory -= OnSessionOver;
             }
         }

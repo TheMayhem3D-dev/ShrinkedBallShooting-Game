@@ -10,7 +10,7 @@ namespace UI
         [SerializeField] private SessionOverWidget gameOverWidget;
         [SerializeField] private SessionOverWidget victoryWidget;
 
-        protected override void Subscribe()
+        public override void Subscribe()
         {
             if (GameEvents.instance)
             {
@@ -19,7 +19,7 @@ namespace UI
             }
         }
 
-        protected override void Unsubcscribe()
+        public override void Unsubscribe()
         {
             if (GameEvents.instance)
             {

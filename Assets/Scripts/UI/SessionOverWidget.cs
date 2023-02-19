@@ -8,8 +8,8 @@ namespace UI
 {
     public class SessionOverWidget : EventEntity
     {
-        protected override void Subscribe() { }
-        protected override void Unsubcscribe() { }
+        public override void Subscribe() { }
+        public override void Unsubscribe() { }
 
         public void ProcessSessionOver()
         {

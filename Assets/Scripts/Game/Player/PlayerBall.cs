@@ -17,6 +17,7 @@ namespace Game.Player
         [Header("Ball Properties")]
         [SerializeField] private float minimumBallSize = 0.1f;
         private const float ballSpeedFactor = 2f;
+        [SerializeField] private GameObject road;
 
         [Header("Raycast Properties")]
         [SerializeField] private float raycastStep = 0.25f;
@@ -25,8 +26,9 @@ namespace Game.Player
 
         void Awake()
         {
-            UpdateRaycasts();
             SetComponents();
+            UpdateRaycasts();
+            GameEvents.instance?.NotifyOnPlayerBallInitialized(this);
         }
 
         private void SetComponents()
@@ -83,8 +85,9 @@ namespace Game.Player
             }
             else
             {
-                GameEvents.instance.NotifyOnGameOver();
+                GameEvents.instance?.NotifyOnGameOver();
                 gameObject.SetActive(false);
+                road?.SetActive(false);
             }
         }
 
@@ -103,6 +106,8 @@ namespace Game.Player
             if (!IsObstacleOnRoad())
             {
                 ReleaseBall();
+                road?.SetActive(false);
+                GameEvents.instance?.NotifyOnClearRoad();
             }
         }
 

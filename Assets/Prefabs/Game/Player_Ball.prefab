@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumBallSize: 0.1
+  road: {fileID: 6816234952438780343}
   raycastStep: 0.2
 --- !u!114 &910056478186187824
 MonoBehaviour:
@@ -281,8 +282,8 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7372569471713779529
 MonoBehaviour:
@@ -456,6 +457,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 232842ec023ba6d4b923d5565f35a1f8, type: 3}
+--- !u!1 &6816234952438780343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6816234951558089657, guid: 232842ec023ba6d4b923d5565f35a1f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1418713614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6816234952438780342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6816234951558089656, guid: 232842ec023ba6d4b923d5565f35a1f8,
