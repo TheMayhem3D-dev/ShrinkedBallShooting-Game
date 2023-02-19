@@ -20,7 +20,6 @@ namespace Game
         {
             ResetTime();
             journeyLength = Vector3.Distance(minJumpHeightPoint.position, maxJumpHeightPoint.position);
-            Debug.Log($"journeyLength {journeyLength}");
         }
 
         void Update()
