@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core;
 
 namespace Game.Player
 {
@@ -10,6 +11,9 @@ namespace Game.Player
         private Scaler scaler;
 
         private Vector3[] raycastOffset;
+
+        [Header("Ball Properties")]
+        [SerializeField] private float minimumBallSize = 0.1f;
 
         [Header("Raycast Properties")]
         [SerializeField] private float raycastStep = 0.25f;
@@ -63,8 +67,21 @@ namespace Game.Player
 
         public void DecreaseBall()
         {
-            scaler.DecreaseScale();
-            UpdateRaycasts();
+            if (CanDecreaseBall())
+            {
+                scaler.DecreaseScale();
+                UpdateRaycasts();
+            }
+            else
+            {
+                GameEvents.instance.NotifyOnGameOver();
+                gameObject.SetActive(false);
+            }
+        }
+
+        private bool CanDecreaseBall()
+        {
+            return transform.localScale.x > minimumBallSize;
         }
 
         void FixedUpdate()
@@ -76,7 +93,7 @@ namespace Game.Player
         {
             if (!IsObstacleOnRoad())
             {
-                Debug.Log("Victory");
+                ReleaseBall();
             }
         }
 
@@ -97,6 +114,11 @@ namespace Game.Player
             }
 
             return false;
+        }
+
+        private void ReleaseBall()
+        {
+
         }
     }
 }
